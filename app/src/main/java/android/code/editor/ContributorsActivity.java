@@ -2,6 +2,8 @@ package android.code.editor;
 
 import android.code.editor.Sketchware.RequestNetwork;
 import android.code.editor.Sketchware.RequestNetworkController;
+import android.code.editor.ui.MaterialColorHelper;
+import android.code.editor.utils.ThemeObservable;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
@@ -26,12 +28,14 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Observable;
+import java.util.Observer;
 import jp.wasabeef.glide.transformations.BlurTransformation;
 import jp.wasabeef.glide.transformations.CropCircleTransformation;
 import org.json.*;
 import org.json.JSONException;
 
-public class ContributorsActivity extends AppCompatActivity {
+public class ContributorsActivity extends AppCompatActivity implements Observer {
     private LinearLayout main;
     
     private LinearLayout loading;
@@ -45,14 +49,30 @@ public class ContributorsActivity extends AppCompatActivity {
     public RequestNetwork.RequestListener reqListener;
     
     public  ArrayList<HashMap<String, Object>> contributorsList = new ArrayList<>();
+	
+	private ThemeObservable themeObservable = new ThemeObservable();
+
     
     @Override
     protected void onCreate(Bundle arg0) {
         super.onCreate(arg0);
         // TODO: Implement this method
+		((MyApplication)getApplication()).getThemeObservable().addObserver(this);
+		MaterialColorHelper.setUpTheme(this);
         setContentView(R.layout.activity_contributors);
-        // Initialze views in layout
-        init();
+		initActivity();
+    }
+	
+	@Override
+    protected void onDestroy() {
+        super.onDestroy();
+        // TODO: Implement this method
+		((MyApplication)getApplication()).getThemeObservable().deleteObserver(this);
+    }
+	
+	public void initActivity() {
+		// Initialze views in layout
+		init();
         main.setVisibility(View.GONE);
         loading.setVisibility(View.VISIBLE);
         
@@ -94,7 +114,7 @@ public class ContributorsActivity extends AppCompatActivity {
 		};
 		
 		reqNetwork.startRequestNetwork(RequestNetworkController.GET,contributorsData,"Contributors",reqListener);
-    }
+	}
     
     public void init() {
         // Setup Toolbat
@@ -102,7 +122,13 @@ public class ContributorsActivity extends AppCompatActivity {
 		setSupportActionBar(toolbar);
 		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 		getSupportActionBar().setHomeButtonEnabled(true);
-        
+		toolbar.setTitleTextColor(
+                MaterialColorHelper.getMaterialColorInt(
+                        this, com.google.android.material.R.attr.colorOnPrimary));
+        toolbar.getNavigationIcon()
+                .setTint(
+                        MaterialColorHelper.getMaterialColorInt(
+                                this, com.google.android.material.R.attr.colorOnPrimary));
 		// Define views
 		list = findViewById(R.id.list);
 		main = findViewById(R.id.main);
@@ -155,6 +181,13 @@ public class ContributorsActivity extends AppCompatActivity {
 			public ViewHolder(View v) {
 				super(v);
 			}
+		}
+	}
+	
+	@Override
+    public void update(Observable arg0, Object arg1) {
+		if ((String)arg1 == "ThemeUpdated") {
+			recreate();
 		}
 	}
 }

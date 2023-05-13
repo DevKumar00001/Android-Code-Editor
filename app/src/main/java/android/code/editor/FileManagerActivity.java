@@ -4,7 +4,11 @@ import android.code.editor.files.utils.FileIcon;
 import android.code.editor.files.utils.FileManager;
 import android.code.editor.ui.MaterialColorHelper;
 import android.code.editor.ui.Utils;
+import android.code.editor.utils.Setting;
+import android.code.editor.utils.ThemeObservable;
 import android.content.Intent;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -15,6 +19,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.PopupMenu;
 import androidx.appcompat.widget.Toolbar;
@@ -23,6 +28,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Observable;
+import java.util.Observer;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -34,13 +41,18 @@ public class FileManagerActivity extends AppCompatActivity {
     private ArrayList<String> listString = new ArrayList<>();
     private ArrayList<HashMap<String, Object>> listMap = new ArrayList<>();
 
+    private ThemeObservable themeObservable = new ThemeObservable();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        MaterialColorHelper.setUpTheme(this);
         // Set Layout in Activity
         setContentView(R.layout.activity_file_manager);
-
+        initActivity();
+    }
+	
+    public void initActivity() {
         initViews();
 
         ExecutorService loadFileList = Executors.newSingleThreadExecutor();
@@ -79,22 +91,41 @@ public class FileManagerActivity extends AppCompatActivity {
                 });
     }
 
-	@Override
+    @Override
     public boolean onCreateOptionsMenu(Menu arg0) {
         super.onCreateOptionsMenu(arg0);
         // TODO: Implement this method
         getMenuInflater().inflate(R.menu.filemanager_activity_menu, arg0);
-		return true;
+        return true;
+    }
+
+    @Override
+    public boolean onPrepareOptionsMenu(Menu arg0) {
+        // TODO: Implement this method
+        MenuItem item = arg0.findItem(R.id.menu_main_setting);
+        Drawable icon =
+                getResources()
+                        .getDrawable(
+                                R.drawable.more_vert_fill0_wght400_grad0_opsz48, this.getTheme());
+        icon.setColorFilter(
+                MaterialColorHelper.getMaterialColorInt(
+                        this, com.google.android.material.R.attr.colorOnPrimary),
+                PorterDuff.Mode.SRC_IN);
+
+        item.setIcon(icon);
+        return super.onPrepareOptionsMenu(arg0);
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem arg0) {
         // TODO: Implement this method
         if (arg0.getItemId() == R.id.menu_main_setting) {
-            PopupMenu popupMenu = new PopupMenu(FileManagerActivity.this, findViewById(R.id.menu_main_setting));
+            PopupMenu popupMenu =
+                    new PopupMenu(FileManagerActivity.this, findViewById(R.id.menu_main_setting));
             Menu menu = popupMenu.getMenu();
             menu.add("Contributors");
-			menu.add("Settings");
+            menu.add("Settings");
+			
             popupMenu.setOnMenuItemClickListener(
                     item -> {
                         switch (item.getTitle().toString()) {
@@ -104,13 +135,11 @@ public class FileManagerActivity extends AppCompatActivity {
                                         FileManagerActivity.this, ContributorsActivity.class);
                                 startActivity(intent);
                                 break;
-							case "Settings":
-								Intent setting = new Intent();
-                                setting.setClass(
-                                        FileManagerActivity.this, SettingActivity.class);
+                            case "Settings":
+                                Intent setting = new Intent();
+                                setting.setClass(FileManagerActivity.this, SettingActivity.class);
                                 startActivity(setting);
-                            default:
-                                return false;
+								break;
                         }
                         return true;
                     });
@@ -125,6 +154,13 @@ public class FileManagerActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
+        toolbar.setTitleTextColor(
+                MaterialColorHelper.getMaterialColorInt(
+                        this, com.google.android.material.R.attr.colorOnPrimary));
+        toolbar.getNavigationIcon()
+                .setTint(
+                        MaterialColorHelper.getMaterialColorInt(
+                                this, com.google.android.material.R.attr.colorOnPrimary));
 
         // Define view
         list = findViewById(R.id.list);
@@ -164,7 +200,14 @@ public class FileManagerActivity extends AppCompatActivity {
             path = _view.findViewById(R.id.path);
             FileIcon.setUpIcon(
                     FileManagerActivity.this, _data.get(_position).get("path").toString(), icon);
-			Utils.applyRippleEffect(mainlayout,MaterialColorHelper.getMaterialColor(FileManagerActivity.this,com.google.android.material.R.attr.colorSurface),MaterialColorHelper.getMaterialColor(FileManagerActivity.this,com.google.android.material.R.attr.colorOnSurface));
+            Utils.applyRippleEffect(
+                    mainlayout,
+                    MaterialColorHelper.getMaterialColor(
+                            FileManagerActivity.this,
+                            com.google.android.material.R.attr.colorSurface),
+                    MaterialColorHelper.getMaterialColor(
+                            FileManagerActivity.this,
+                            com.google.android.material.R.attr.colorOnSurface));
             path.setText(_data.get(_position).get("lastSegmentOfFilePath").toString());
             final String path = _data.get(_position).get("path").toString();
             if (new File(path).isDirectory()) {
@@ -206,4 +249,6 @@ public class FileManagerActivity extends AppCompatActivity {
             }
         }
     }
+	
+    
 }
