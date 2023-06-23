@@ -5,6 +5,7 @@ import android.code.editor.files.utils.FileManager;
 import android.code.editor.files.utils.FileTypeHandler;
 import android.code.editor.ui.MaterialColorHelper;
 import android.code.editor.ui.Utils;
+import android.code.editor.utils.GitCloner;
 import android.code.editor.utils.ProjectCreatorDialog;
 import android.content.Intent;
 import android.graphics.PorterDuff;
@@ -34,6 +35,7 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
+import com.itsaky.androidide.logsender.LogSender;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -96,6 +98,7 @@ public class FileManagerActivity extends AppCompatActivity {
             Menu menu = popupMenu.getMenu();
             menu.add("New folder");
             menu.add("New Project");
+            menu.add("Git Clone");
             menu.add("Contributors");
             menu.add("Settings");
 
@@ -207,6 +210,10 @@ public class FileManagerActivity extends AppCompatActivity {
                                             dialog.create().dismiss();
                                         });
                                 dialog.create().show();
+                                break;
+                            case "Git Clone":
+                                LogSender.startLogging(this);
+                                new GitCloner(getIntent().getStringExtra("path"), this);
                                 break;
                             case "Contributors":
                                 Intent intent = new Intent();
