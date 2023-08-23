@@ -1,0 +1,10 @@
+R_DEF: Internal format may change without notice
+local
+drawable utils_toast_bg
+id utvBottomIconView
+id utvLeftIconView
+id utvRightIconView
+id utvTopIconView
+layout utils_toast_view
+style ActivityTranslucent
+xml util_code_provider_paths

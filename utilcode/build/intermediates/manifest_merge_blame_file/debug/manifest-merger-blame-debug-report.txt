@@ -1,0 +1,86 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.tsd.termux" >
+4
+5    <uses-sdk android:minSdkVersion="21" />
+5-->/storage/emulated/0/.GitHub/Android-Code-Editor/utilcode/src/main/AndroidManifest.xml
+6
+7    <queries>
+7-->/storage/emulated/0/.GitHub/Android-Code-Editor/utilcode/src/main/AndroidManifest.xml:3:5-10:15
+8        <intent>
+8-->/storage/emulated/0/.GitHub/Android-Code-Editor/utilcode/src/main/AndroidManifest.xml:4:9-6:18
+9            <action android:name="android.intent.action.MAIN" />
+9-->/storage/emulated/0/.GitHub/Android-Code-Editor/utilcode/src/main/AndroidManifest.xml:5:13-65
+9-->/storage/emulated/0/.GitHub/Android-Code-Editor/utilcode/src/main/AndroidManifest.xml:5:21-62
+10        </intent>
+11        <intent>
+11-->/storage/emulated/0/.GitHub/Android-Code-Editor/utilcode/src/main/AndroidManifest.xml:7:9-9:18
+12            <action android:name="android.intent.action.VIEW" />
+12-->/storage/emulated/0/.GitHub/Android-Code-Editor/utilcode/src/main/AndroidManifest.xml:8:13-65
+12-->/storage/emulated/0/.GitHub/Android-Code-Editor/utilcode/src/main/AndroidManifest.xml:8:21-62
+13        </intent>
+14    </queries>
+15
+16    <application>
+16-->/storage/emulated/0/.GitHub/Android-Code-Editor/utilcode/src/main/AndroidManifest.xml:12:5-46:19
+17        <activity
+17-->/storage/emulated/0/.GitHub/Android-Code-Editor/utilcode/src/main/AndroidManifest.xml:14:9-19:75
+18            android:name="com.blankj.utilcode.util.UtilsTransActivity4MainProcess"
+18-->/storage/emulated/0/.GitHub/Android-Code-Editor/utilcode/src/main/AndroidManifest.xml:15:13-83
+19            android:configChanges="orientation|keyboardHidden|screenSize"
+19-->/storage/emulated/0/.GitHub/Android-Code-Editor/utilcode/src/main/AndroidManifest.xml:17:13-74
+20            android:exported="false"
+20-->/storage/emulated/0/.GitHub/Android-Code-Editor/utilcode/src/main/AndroidManifest.xml:16:13-37
+21            android:theme="@style/ActivityTranslucent"
+21-->/storage/emulated/0/.GitHub/Android-Code-Editor/utilcode/src/main/AndroidManifest.xml:18:13-55
+22            android:windowSoftInputMode="stateHidden|stateAlwaysHidden" />
+22-->/storage/emulated/0/.GitHub/Android-Code-Editor/utilcode/src/main/AndroidManifest.xml:19:13-72
+23        <activity
+23-->/storage/emulated/0/.GitHub/Android-Code-Editor/utilcode/src/main/AndroidManifest.xml:21:9-27:75
+24            android:name="com.blankj.utilcode.util.UtilsTransActivity"
+24-->/storage/emulated/0/.GitHub/Android-Code-Editor/utilcode/src/main/AndroidManifest.xml:22:13-71
+25            android:configChanges="orientation|keyboardHidden|screenSize"
+25-->/storage/emulated/0/.GitHub/Android-Code-Editor/utilcode/src/main/AndroidManifest.xml:24:13-74
+26            android:exported="false"
+26-->/storage/emulated/0/.GitHub/Android-Code-Editor/utilcode/src/main/AndroidManifest.xml:23:13-37
+27            android:multiprocess="true"
+27-->/storage/emulated/0/.GitHub/Android-Code-Editor/utilcode/src/main/AndroidManifest.xml:25:13-40
+28            android:theme="@style/ActivityTranslucent"
+28-->/storage/emulated/0/.GitHub/Android-Code-Editor/utilcode/src/main/AndroidManifest.xml:26:13-55
+29            android:windowSoftInputMode="stateHidden|stateAlwaysHidden" />
+29-->/storage/emulated/0/.GitHub/Android-Code-Editor/utilcode/src/main/AndroidManifest.xml:27:13-72
+30
+31        <provider
+31-->/storage/emulated/0/.GitHub/Android-Code-Editor/utilcode/src/main/AndroidManifest.xml:29:9-37:20
+32            android:name="com.blankj.utilcode.util.UtilsFileProvider"
+32-->/storage/emulated/0/.GitHub/Android-Code-Editor/utilcode/src/main/AndroidManifest.xml:30:13-70
+33            android:authorities="com.tsd.termux.utilcode.fileprovider"
+33-->/storage/emulated/0/.GitHub/Android-Code-Editor/utilcode/src/main/AndroidManifest.xml:31:13-71
+34            android:exported="false"
+34-->/storage/emulated/0/.GitHub/Android-Code-Editor/utilcode/src/main/AndroidManifest.xml:32:13-37
+35            android:grantUriPermissions="true" >
+35-->/storage/emulated/0/.GitHub/Android-Code-Editor/utilcode/src/main/AndroidManifest.xml:33:13-47
+36            <meta-data
+36-->/storage/emulated/0/.GitHub/Android-Code-Editor/utilcode/src/main/AndroidManifest.xml:34:13-36:68
+37                android:name="android.support.FILE_PROVIDER_PATHS"
+37-->/storage/emulated/0/.GitHub/Android-Code-Editor/utilcode/src/main/AndroidManifest.xml:35:17-67
+38                android:resource="@xml/util_code_provider_paths" />
+38-->/storage/emulated/0/.GitHub/Android-Code-Editor/utilcode/src/main/AndroidManifest.xml:36:17-65
+39        </provider>
+40
+41        <service
+41-->/storage/emulated/0/.GitHub/Android-Code-Editor/utilcode/src/main/AndroidManifest.xml:39:9-45:19
+42            android:name="com.blankj.utilcode.util.MessengerUtils$ServerService"
+42-->/storage/emulated/0/.GitHub/Android-Code-Editor/utilcode/src/main/AndroidManifest.xml:40:13-81
+43            android:exported="false" >
+43-->/storage/emulated/0/.GitHub/Android-Code-Editor/utilcode/src/main/AndroidManifest.xml:41:13-37
+44            <intent-filter>
+44-->/storage/emulated/0/.GitHub/Android-Code-Editor/utilcode/src/main/AndroidManifest.xml:42:13-44:29
+45                <action android:name="com.blankj.utilcode.util.messenger" />
+45-->/storage/emulated/0/.GitHub/Android-Code-Editor/utilcode/src/main/AndroidManifest.xml:43:17-77
+45-->/storage/emulated/0/.GitHub/Android-Code-Editor/utilcode/src/main/AndroidManifest.xml:43:25-74
+46            </intent-filter>
+47        </service>
+48    </application>
+49
+50</manifest>

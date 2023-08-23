@@ -1,0 +1,95 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /storage/emulated/0/.GitHub/Android-Code-Editor/utilcode/src/main/AndroidManifest.xml:1:1-47:12
+INJECTED from /storage/emulated/0/.GitHub/Android-Code-Editor/utilcode/src/main/AndroidManifest.xml:1:1-47:12
+INJECTED from /storage/emulated/0/.GitHub/Android-Code-Editor/utilcode/src/main/AndroidManifest.xml:1:1-47:12
+	package
+		INJECTED from /storage/emulated/0/.GitHub/Android-Code-Editor/utilcode/src/main/AndroidManifest.xml
+		ADDED from /storage/emulated/0/.GitHub/Android-Code-Editor/utilcode/src/main/AndroidManifest.xml:1:1-47:12
+		INJECTED from /storage/emulated/0/.GitHub/Android-Code-Editor/utilcode/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /storage/emulated/0/.GitHub/Android-Code-Editor/utilcode/src/main/AndroidManifest.xml:1:11-69
+queries
+ADDED from /storage/emulated/0/.GitHub/Android-Code-Editor/utilcode/src/main/AndroidManifest.xml:3:5-10:15
+intent#action:name:android.intent.action.MAIN
+ADDED from /storage/emulated/0/.GitHub/Android-Code-Editor/utilcode/src/main/AndroidManifest.xml:4:9-6:18
+action#android.intent.action.MAIN
+ADDED from /storage/emulated/0/.GitHub/Android-Code-Editor/utilcode/src/main/AndroidManifest.xml:5:13-65
+	android:name
+		ADDED from /storage/emulated/0/.GitHub/Android-Code-Editor/utilcode/src/main/AndroidManifest.xml:5:21-62
+intent#action:name:android.intent.action.VIEW
+ADDED from /storage/emulated/0/.GitHub/Android-Code-Editor/utilcode/src/main/AndroidManifest.xml:7:9-9:18
+action#android.intent.action.VIEW
+ADDED from /storage/emulated/0/.GitHub/Android-Code-Editor/utilcode/src/main/AndroidManifest.xml:8:13-65
+	android:name
+		ADDED from /storage/emulated/0/.GitHub/Android-Code-Editor/utilcode/src/main/AndroidManifest.xml:8:21-62
+application
+ADDED from /storage/emulated/0/.GitHub/Android-Code-Editor/utilcode/src/main/AndroidManifest.xml:12:5-46:19
+activity#com.blankj.utilcode.util.UtilsTransActivity4MainProcess
+ADDED from /storage/emulated/0/.GitHub/Android-Code-Editor/utilcode/src/main/AndroidManifest.xml:14:9-19:75
+	android:windowSoftInputMode
+		ADDED from /storage/emulated/0/.GitHub/Android-Code-Editor/utilcode/src/main/AndroidManifest.xml:19:13-72
+	android:exported
+		ADDED from /storage/emulated/0/.GitHub/Android-Code-Editor/utilcode/src/main/AndroidManifest.xml:16:13-37
+	android:configChanges
+		ADDED from /storage/emulated/0/.GitHub/Android-Code-Editor/utilcode/src/main/AndroidManifest.xml:17:13-74
+	android:theme
+		ADDED from /storage/emulated/0/.GitHub/Android-Code-Editor/utilcode/src/main/AndroidManifest.xml:18:13-55
+	android:name
+		ADDED from /storage/emulated/0/.GitHub/Android-Code-Editor/utilcode/src/main/AndroidManifest.xml:15:13-83
+activity#com.blankj.utilcode.util.UtilsTransActivity
+ADDED from /storage/emulated/0/.GitHub/Android-Code-Editor/utilcode/src/main/AndroidManifest.xml:21:9-27:75
+	android:multiprocess
+		ADDED from /storage/emulated/0/.GitHub/Android-Code-Editor/utilcode/src/main/AndroidManifest.xml:25:13-40
+	android:windowSoftInputMode
+		ADDED from /storage/emulated/0/.GitHub/Android-Code-Editor/utilcode/src/main/AndroidManifest.xml:27:13-72
+	android:exported
+		ADDED from /storage/emulated/0/.GitHub/Android-Code-Editor/utilcode/src/main/AndroidManifest.xml:23:13-37
+	android:configChanges
+		ADDED from /storage/emulated/0/.GitHub/Android-Code-Editor/utilcode/src/main/AndroidManifest.xml:24:13-74
+	android:theme
+		ADDED from /storage/emulated/0/.GitHub/Android-Code-Editor/utilcode/src/main/AndroidManifest.xml:26:13-55
+	android:name
+		ADDED from /storage/emulated/0/.GitHub/Android-Code-Editor/utilcode/src/main/AndroidManifest.xml:22:13-71
+provider#com.blankj.utilcode.util.UtilsFileProvider
+ADDED from /storage/emulated/0/.GitHub/Android-Code-Editor/utilcode/src/main/AndroidManifest.xml:29:9-37:20
+	android:grantUriPermissions
+		ADDED from /storage/emulated/0/.GitHub/Android-Code-Editor/utilcode/src/main/AndroidManifest.xml:33:13-47
+	android:authorities
+		ADDED from /storage/emulated/0/.GitHub/Android-Code-Editor/utilcode/src/main/AndroidManifest.xml:31:13-71
+	android:exported
+		ADDED from /storage/emulated/0/.GitHub/Android-Code-Editor/utilcode/src/main/AndroidManifest.xml:32:13-37
+	android:name
+		ADDED from /storage/emulated/0/.GitHub/Android-Code-Editor/utilcode/src/main/AndroidManifest.xml:30:13-70
+meta-data#android.support.FILE_PROVIDER_PATHS
+ADDED from /storage/emulated/0/.GitHub/Android-Code-Editor/utilcode/src/main/AndroidManifest.xml:34:13-36:68
+	android:resource
+		ADDED from /storage/emulated/0/.GitHub/Android-Code-Editor/utilcode/src/main/AndroidManifest.xml:36:17-65
+	android:name
+		ADDED from /storage/emulated/0/.GitHub/Android-Code-Editor/utilcode/src/main/AndroidManifest.xml:35:17-67
+service#com.blankj.utilcode.util.MessengerUtils$ServerService
+ADDED from /storage/emulated/0/.GitHub/Android-Code-Editor/utilcode/src/main/AndroidManifest.xml:39:9-45:19
+	android:exported
+		ADDED from /storage/emulated/0/.GitHub/Android-Code-Editor/utilcode/src/main/AndroidManifest.xml:41:13-37
+	android:name
+		ADDED from /storage/emulated/0/.GitHub/Android-Code-Editor/utilcode/src/main/AndroidManifest.xml:40:13-81
+intent-filter#action:name:com.blankj.utilcode.util.messenger
+ADDED from /storage/emulated/0/.GitHub/Android-Code-Editor/utilcode/src/main/AndroidManifest.xml:42:13-44:29
+action#com.blankj.utilcode.util.messenger
+ADDED from /storage/emulated/0/.GitHub/Android-Code-Editor/utilcode/src/main/AndroidManifest.xml:43:17-77
+	android:name
+		ADDED from /storage/emulated/0/.GitHub/Android-Code-Editor/utilcode/src/main/AndroidManifest.xml:43:25-74
+uses-sdk
+INJECTED from /storage/emulated/0/.GitHub/Android-Code-Editor/utilcode/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /storage/emulated/0/.GitHub/Android-Code-Editor/utilcode/src/main/AndroidManifest.xml
+INJECTED from /storage/emulated/0/.GitHub/Android-Code-Editor/utilcode/src/main/AndroidManifest.xml
+INJECTED from /storage/emulated/0/.GitHub/Android-Code-Editor/utilcode/src/main/AndroidManifest.xml
+INJECTED from /storage/emulated/0/.GitHub/Android-Code-Editor/utilcode/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /storage/emulated/0/.GitHub/Android-Code-Editor/utilcode/src/main/AndroidManifest.xml
+		ADDED from /storage/emulated/0/.GitHub/Android-Code-Editor/utilcode/src/main/AndroidManifest.xml
+		INJECTED from /storage/emulated/0/.GitHub/Android-Code-Editor/utilcode/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /storage/emulated/0/.GitHub/Android-Code-Editor/utilcode/src/main/AndroidManifest.xml
+		ADDED from /storage/emulated/0/.GitHub/Android-Code-Editor/utilcode/src/main/AndroidManifest.xml
+		INJECTED from /storage/emulated/0/.GitHub/Android-Code-Editor/utilcode/src/main/AndroidManifest.xml
